@@ -1,0 +1,25 @@
+{
+  // commonSourceDirectory: "src/common",
+  title: 'Church Document Hosting',
+  // whiteListedModules: ["foo-ui-library"],
+
+  main: {
+    // extraEntries: ["@/preload.js"],
+    webpackConfig: 'webpack.main.additions.js',
+    sourceDirectory: 'src/main'
+  },
+
+  renderer: {
+    // WebpackDllConfig: "custom.webpackDll.additions.js",
+    dll: [
+      'react',
+      'react-dom',
+      'sharp',
+      'mammoth',
+      'imagemin',
+      'imagemin-jpegtran'
+    ],
+    webpackConfig: 'webpack.renderer.additions.js',
+    sourceDirectory: 'src/renderer'
+  }
+}
